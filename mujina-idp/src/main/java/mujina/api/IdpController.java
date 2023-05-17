@@ -70,12 +70,6 @@ public class IdpController extends SharedController {
     configuration().getUsers().add(userAuthenticationToken);
   }
 
-  @PutMapping("authmethod")
-  public void setAuthenticationMethod(@RequestBody String authenticationMethod) {
-    LOG.info("Request to set auth method to {}", authenticationMethod);
-    configuration().setAuthenticationMethod(AuthenticationMethod.valueOf(authenticationMethod));
-  }
-
   @PutMapping("/acsendpoint")
   public void setAcsEndpoint(@RequestBody String acsEndpoint) {
     LOG.info("Request to set Assertion Consumer Service Endpoint to {}", acsEndpoint);

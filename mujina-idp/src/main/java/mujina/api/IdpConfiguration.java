@@ -25,8 +25,6 @@ public class IdpConfiguration extends SharedConfiguration {
   private Map<String, List<String>> attributes = new TreeMap<>();
   private List<FederatedUserAuthenticationToken> users = new ArrayList<>();
   private String acsEndpoint;
-  private AuthenticationMethod authenticationMethod;
-  private AuthenticationMethod defaultAuthenticationMethod;
   private final String idpPrivateKey;
   private final String idpCertificate;
   private final StandardAttributes standardAttributes;
@@ -36,14 +34,12 @@ public class IdpConfiguration extends SharedConfiguration {
                           @Value("${idp.entity_id}") String defaultEntityId,
                           @Value("${idp.private_key}") String idpPrivateKey,
                           @Value("${idp.certificate}") String idpCertificate,
-                          @Value("${idp.auth_method}") String authMethod,
                           StandardAttributes standardAttributes) {
 
     super(keyManager);
     this.defaultEntityId = defaultEntityId;
     this.idpPrivateKey = idpPrivateKey;
     this.idpCertificate = idpCertificate;
-    this.defaultAuthenticationMethod = AuthenticationMethod.valueOf(authMethod);
     this.standardAttributes = standardAttributes;
     reset();
   }
@@ -55,7 +51,6 @@ public class IdpConfiguration extends SharedConfiguration {
     resetKeyStore(defaultEntityId, idpPrivateKey, idpCertificate);
     resetUsers();
     setAcsEndpoint(null);
-    setAuthenticationMethod(this.defaultAuthenticationMethod);
     setSignatureAlgorithm(getDefaultSignatureAlgorithm());
   }
 
