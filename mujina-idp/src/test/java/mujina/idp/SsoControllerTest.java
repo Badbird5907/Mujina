@@ -54,7 +54,7 @@ public class SsoControllerTest extends AbstractIntegrationTest {
     }
     requestSpecification.filter(cookieFilter);
 
-    String path = "/SingleSignOnService";
+    String path = "/sso/saml/idp";
     Response response = post ? requestSpecification.post(path) : requestSpecification.get(path);
 
     response

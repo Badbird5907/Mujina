@@ -43,13 +43,13 @@ public class SsoController {
   @Autowired
   private IdpConfiguration idpConfiguration;
 
-  @GetMapping("/SingleSignOnService")
+  @GetMapping("/sso/saml/idp")
   public void singleSignOnServiceGet(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
     throws IOException, MarshallingException, SignatureException, MessageEncodingException, ValidationException, SecurityException, MessageDecodingException, MetadataProviderException, ServletException {
     doSSO(request, response, authentication, false);
   }
 
-  @PostMapping("/SingleSignOnService")
+  @PostMapping("/sso/saml/idp")
   public void singleSignOnServicePost(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
     throws IOException, MarshallingException, SignatureException, MessageEncodingException, ValidationException, SecurityException, MessageDecodingException, MetadataProviderException, ServletException {
     doSSO(request, response, authentication, true);

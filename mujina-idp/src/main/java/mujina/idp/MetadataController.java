@@ -77,7 +77,7 @@ public class MetadataController {
     idpssoDescriptor.addSupportedProtocol(SAMLConstants.SAML20P_NS);
 
     SingleSignOnService singleSignOnService = buildSAMLObject(SingleSignOnService.class, SingleSignOnService.DEFAULT_ELEMENT_NAME);
-    singleSignOnService.setLocation(idpBaseUrl + "/SingleSignOnService");
+    singleSignOnService.setLocation(idpBaseUrl + "/sso/saml/idp");
     singleSignOnService.setBinding(SAMLConstants.SAML2_REDIRECT_BINDING_URI);
 
     idpssoDescriptor.getSingleSignOnServices().add(singleSignOnService);

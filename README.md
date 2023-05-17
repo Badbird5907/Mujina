@@ -342,6 +342,6 @@ This API is only available on the SP.
 ```bash
 curl -v -H "Accept: application/json" \
         -H "Content-type: application/json" \
-        -X PUT -d "http://localhost:8080/SingleSignOnService/vo:test" \
+        -X PUT -d "http://localhost:8080/sso/saml/idp/vo:test" \
         http://localhost:9090/api/ssoServiceURL
 ```

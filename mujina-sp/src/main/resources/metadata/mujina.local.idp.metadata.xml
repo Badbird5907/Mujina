@@ -40,6 +40,6 @@
     </md:KeyDescriptor>
     <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
     <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-                            Location="http://localhost:8080/SingleSignOnService"/>
+                            Location="http://localhost:8080/sso/saml/idp"/>
   </md:IDPSSODescriptor>
 </md:EntityDescriptor>
